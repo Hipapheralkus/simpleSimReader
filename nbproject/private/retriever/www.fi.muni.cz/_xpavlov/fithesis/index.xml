@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+    <title>fithesis</title>
+    <link rel="stylesheet" href="fithesis.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.69.1" />
+    <meta name="keywords" content="fithesis, LaTeX" />
+  </head>
+  <body>
+    <div class="article" lang="cs" xml:lang="cs">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h1 class="title"><a id="id2590028"></a>fithesis</h1>
+          </div>
+          <div>
+            <h3 class="subtitle">
+              <i>version 0.2.12</i>
+            </h3>
+          </div>
+          <div>
+            <div class="author">
+              <h3 class="author"><span class="firstname">Jan</span> <span class="surname">Pavlovič</span></h3>
+              <code class="email">&lt;<a href="mailto:pavlovic@fi.muni.cz">pavlovic@fi.muni.cz</a>&gt;</code>
+            </div>
+          </div>
+          <div>
+            <p class="pubdate">27. července 2008</p>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div class="sect1" lang="cs" xml:lang="cs">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="id2803848"></a>Info</h2>
+            </div>
+          </div>
+        </div>
+        <p>Fithesis je LaTeXovy styl pro tvorbu bakalářských a diplomových prací</p>
+      </div>
+      <div class="sect1" lang="cs" xml:lang="cs">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="id2789538"></a>Dokumentace</h2>
+            </div>
+          </div>
+        </div>
+        <p>Tento text popisuje instalaci a použití sady maker pro sazbu diplomové a bakalářské práce na Fakultě informatiky Masarykovy univerzity v systému LATEX. Uživateli umožní jednotně vysadit všechny potřebné povinné i nepovinné části stanovené v pokynech pro vypracování diplomové a bakalářské práce na FI MU. Jeho použití však automaticky nezaručuje typografickou správnost, je třeba ho případně použít jako pomůcku.</p>
+        <div class="sect2" lang="cs" xml:lang="cs">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id2809846"></a>Instalace maker fithesis</h3>
+              </div>
+            </div>
+          </div>
+          <p>K samotné instalaci stylu jsou potřeba alespoň dva soubory: standardní instalační soubory LATEXu fithesis.dtx a fithesis.ins. Protože je v makrech používáno písmo Palatino, logo Fakulty informatiky a samotná sazba diplomové a bakalářské práce je založena na stylu scrreprt, je třeba zároveň instalovat i tuto podporu, pokud ji distribuce TEXu kterou používáte neobsahuje.</p>
+          <p>Po spuštění instalace příkazem tex fithesis.ins se vygenerují soubory fithesis.cls (základní třída) a soubory fit10.clo, fit11.clo a fit12.clo (volby určující velikost písma). Příkazem cslatex fithesis.dtx je možné přeložit dokumentaci.</p>
+        </div>
+        <div class="sect2" lang="cs" xml:lang="cs">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id2796226"></a>Použití třídy fithesis</h3>
+              </div>
+            </div>
+          </div>
+          <p>Pro použití sady maker uvedeme v příkazu \documentclass vytvářeného dokumentu třídu (styl) fithesis, která může být modifikována volbami, umístěnými ve volitelném parametru tohoto příkazu. Možné volby jsou tyto:
+
+		</p>
+          <div class="itemizedlist">
+            <ul type="disc">
+              <li>
+                <p>10pt - změní základní velikost písma na 10 bodů. Při této volbě je počet řádků vysazené strany roven 40ti, průměrný počet znaků na řádku se pohybuje mezi 70ti až 80ti. Nedoporučováno, pokud nebude při výsledném tisku tiskové zrcadlo zvětšováno z B5 na A4.</p>
+              </li>
+              <li>
+                <p>11pt - základní velikost písma bude 11 bodů. Tato volba byla ve starší verzi nastavena implicitně. Počet řádek vysazené strany je 40, průměrný počet znaků na řádce při použití fontu Palatino je 65 až 70.</p>
+              </li>
+              <li>
+                <p>12pt - Základní velikost písma se touto volbou změní na 12 bodů. Počet řádeků na stránce je 38, průměrný počet znaků na řádce je 55 až 60. Tato volba je implicitní a doporučována.</p>
+              </li>
+              <li>
+                <p>oneside - Tato volba umožní sazbu práce pouze jednostraně, je nastavena implicitně. Sazba je pouze na stranách lichých. Tato volba je implicitní a doporučována.</p>
+              </li>
+              <li>
+                <p>twoside - Sazba práce bude oboustraná, rozlišují se liché a sudé strany, začátky kapitol a jiných významných celků jsou umístěny vždy na straně liché, tedy pravé.</p>
+              </li>
+              <li>
+                <p>onecolumn - Implicitně nastavená volba pro sazbu textu do jednoho sloupce na stránce. Text je zarovnaný oba okraje sloupce.</p>
+              </li>
+              <li>
+                <p>twocolumn - Tato volba umožní sazbu textu do dvou sloupců na stánku. Text je zarovnaný na oba okraje sloupce. Tato volba je implicitní a doporučována.</p>
+              </li>
+              <li>
+                <p>draft - Po nastavení této volby bude špatně zalomený text na koncích řádků zvýrazněn černým obdélníčkem pro snažší vizuální identifikaci. Dále volbu přebírají další balíky, jako je graphics, a zde způsobí sazbu rámečků místo vkládání obrázků.</p>
+              </li>
+              <li>
+                <p>final - Opak volby draft. Tato volba je nastavena implicitně. Jednotlivé volby se mohou patřičně kombinovat. Lze volit mezi velikostí základního písma (10pt, 11pt a 12pt), mezi sazbou jednostrannou a oboustrannou, sazbou jednosloupcovou a dvousloupcovou a mezi konečnou finální podobou a konceptem dokumentu (volby final a draft).</p>
+              </li>
+            </ul>
+          </div>
+          <p>
+	 </p>
+        </div>
+        <div class="sect2" lang="cs" xml:lang="cs">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id2830554"></a>Popis jednotlivých maker</h3>
+              </div>
+            </div>
+          </div>
+          <p>Následující makra slouží k vložení základních údajů potřebných k vysazení titulní strany. Na titulní stranu se kromě názvu práce, jména studenta a roku vypracování vysadí také logo fakulty.
+
+			</p>
+          <div class="variablelist">
+            <dl>
+              <dt>
+                <span class="term">\thesistitle</span>
+              </dt>
+              <dd>
+                <p>Makro umožní vložit název práce, u dvouřádkových či víceřádkových názvů se standardně oddělí jednotlivé části příkazem \\ s volitelným parametrem meziřádkového prokladu.</p>
+              </dd>
+              <dt>
+                <span class="term">\thesissubtitle</span>
+              </dt>
+              <dd>
+                <p>Makro umožní vložit název typu práce, např. bakalářská práce diplomová práce atd.</p>
+              </dd>
+              <dt>
+                <span class="term">\thesisstudent</span>
+              </dt>
+              <dd>
+                <p>Makro umožní pomocí svého jediného parametru vložit jméno studenta.</p>
+              </dd>
+              <dt>
+                <span class="term">\thesiswoman</span>
+              </dt>
+              <dd>
+                <p>Makro umožní vložit pohlaví studenta, volby jsou: true, false (nahrazuje použití přepínače \ifwoman).</p>
+              </dd>
+              <dt>
+                <span class="term">\thesisfaculty</span>
+              </dt>
+              <dd>
+                <p>Makro umožní stanovit pod jakou fakultou byla práce napsána. Podle toho se také vloží patřičné logo a název fakulty na titulní stránku. Jsou podporovány tyto fakulty MU:
+							</p>
+                <div class="itemizedlist">
+                  <ul type="disc">
+                    <li>
+                      <p>Fakulta informatiky - fi <sup>[<a id="id2831491" href="#ftn.id2831491">1</a>]</sup>,</p>
+                    </li>
+                    <li>
+                      <p>Přírodovědecká fakulta - sci,</p>
+                    </li>
+                    <li>
+                      <p>Právnická fakulta - law,</p>
+                    </li>
+                    <li>
+                      <p>Ekonomicko-správní fakulta - eco,</p>
+                    </li>
+                    <li>
+                      <p>Fakulta sociálních studií - fss,</p>
+                    </li>
+                    <li>
+                      <p>Lékařská fakulta - med,</p>
+                    </li>
+                    <li>
+                      <p>Pedagogická fakulta - ped,</p>
+                    </li>
+                    <li>
+                      <p>Filozofická fakulta - phil</p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+							například: \thesisfaculty{fi}. Lze použít i vlastní název, pokud práce není psaná pod žádnou z výše uvedených fakult MU, pak je nutné zadat i název univerzity \thesisuniversity{}, jméno souboru loga fakulty (bez přípony) \thesislogo{} a též do makra \thesisyear{} sídlo dané univerzity (pro MU toto není třeba).						
+								</p>
+              </dd>
+              <dt>
+                <span class="term">\thesisyear</span>
+              </dt>
+              <dd>
+                <p>Makro umožní vložit rok vypracování práce. \thesisadvisor Makro umožní vložit jméno vedoucího práce. \thesisuniversity Makro umožní stanovit pod jakou univerzitou byla práce napsána. Má význam jen v případě, že práce není psaná pod MU.</p>
+              </dd>
+              <dt>
+                <span class="term">\thesislogo</span>
+              </dt>
+              <dd>
+                <p>Makro umožní stanovit soubor (bez přípony) loga fakulty pod jakou byla práce napsaná. Má význam jen v případě, že práce není psaná pod MU.</p>
+              </dd>
+              <dt>
+                <span class="term">\thesislang</span>
+              </dt>
+              <dd>
+                <p>Makro umožní stanovit jazyk, ve kterém je práce napsaná (v současné době jsou podporovany variany: cs, sk, en).</p>
+              </dd>
+              <dt>
+                <span class="term">\ThesisTitlePage</span>
+              </dt>
+              <dd>
+                <p>Titulní strana práce se vysadí příkazem \ThesisTitlePage a využije předem zadaných údajů názvu práce a jména studenta a roku vypracování.</p>
+              </dd>
+              <dt>
+                <span class="term">\FrontMatter</span>
+              </dt>
+              <dd>
+                <p>Toto makro se vloží na začátek dokumentu (nejlépe za příkaz \begin{document}). První strany dokumentu obsahujících prohlášení, abstrakt a klíčová slova se nastaví na římské číslování. U dalších stran včetně obsahu a následujících kapitol se pomocí makra \MainMatter nastaví arabské číslování.</p>
+              </dd>
+            </dl>
+          </div>
+          <p>
+		</p>
+          <div class="sect3" lang="cs" xml:lang="cs">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="id2815440"></a>Povinné části diplomové práce</h4>
+                </div>
+              </div>
+            </div>
+            <p>Následující makra jsou potřebná k vysazení povinných částí diplomové práce. Jsou jimi prohlášení o samostatném vypracování, shrnutí diplomové práce a klíčová slova. Nepovinou částí je poděkování. Pro všechny tyto celky je vždy definováno prostředí, které zajistí kromě vysazení každé části na samostatnou stranu například také jednotné styly nadpisů. Poslední povinnou částí je seznam literatury, ten se, stejně jako obsah diplomové práce již sází pomocí standardních LATEXových příkazů.</p>
+            <div class="variablelist">
+              <dl>
+                <dt>
+                  <span class="term">ThesisDeclaration</span>
+                </dt>
+                <dd>
+                  <p>Prostředí ThesisDeclaration vysadí stránku s prohlášením o samostatném vypracování diplomové práce. Text tohoto prohlášení může uživatel předefinovat pomocí makra \DeclarationText. Implicitně sázený text je následovný:</p>
+                  <p>Prohlašuji, že tato diplomová práce je mým původním autorským dílem, které jsem vypracoval samostatně. Všechny zdroje, prameny a literaturu, které jsem při vypracování používal nebo z nich čerpal, v práci řádně cituji s uvedením úplného odkazu na příslušný zdroj.</p>
+                  <p>Dále se vloží makro \AdvisorName, které vysází údaje o vedoucím práce.</p>
+                </dd>
+                <dt>
+                  <span class="term">ThesisThanks</span>
+                </dt>
+                <dd>
+                  <p>Toto prostředí umožní vysadit poděkování.</p>
+                </dd>
+                <dt>
+                  <span class="term">ThesisAbstract</span>
+                </dt>
+                <dd>
+                  <p>Shrnutí diplomové práce je možno vysadit pomocí prostředí ThesisAbstract. Shrnutí by mělo zabírat prostor nejvýše jedné strany.</p>
+                </dd>
+                <dt>
+                  <span class="term">ThesisAbstracten</span>
+                </dt>
+                <dd>
+                  <p>Abstract diplomové práce v angličtině je možno vysadit pomocí prostředí ThesisAbstracten. Abstract by měl zabírat prostor nejvýše jedné strany.</p>
+                </dd>
+                <dt>
+                  <span class="term">ThesisKeyWords</span>
+                </dt>
+                <dd>
+                  <p>Klíčová slova oddělená čárkami se vepíší do prostředí ThesisKeyWords.</p>
+                </dd>
+                <dt>
+                  <span class="term">\MainMatter</span>
+                </dt>
+                <dd>
+                  <p>Makro \MainMatter nastaví kromě arabského číslování stránek také implicitní styl stránky pro sazbu následujících kapitol. V tomto stylu se do hlavičky stránky vkládá název aktuální kapitoly a od ostatního textu se záhlaví oddělí horizontální čarou.</p>
+                  <p>Protože je použito dvojí číslování je nutné zadat hyperrefu parametry, které zajistí správné odkazování unitř dokumentu. \usepackage[plainpages=false, pdfpagelabels]hyperref</p>
+                  <p>Další text diplomové práce (obsah, úvod, jednotlivé kapitoly a části, popřípadě závěr, literatura či dodatky) se již sází standardními příkazy. Následuje zjednodušený ukázkový příklad kostry diplomové práce.</p>
+                  <pre class="programlisting">
+\documentclass[11pt,draft,oneside]{fithesis}
+\usepackage[plainpages=false, pdfpagelabels]{hyperref}
+\thesistitle{Tvorba dokumentu v XML}
+\thesissubtitle{Bakalářská práce}
+\thesisstudent{Jméno Příjmení}
+\thesiswoman{false}
+\thesisfaculty{fi}
+\thesisyear{jaro 2003}
+\thesisadvisor{Jméno Příjmení}
+
+\begin{document}
+\FrontMatter
+\ThesisTitlePage
+
+\begin{ThesisDeclaration}
+\DeclarationText
+\AdvisorName
+\end{ThesisDeclaration}
+
+\begin{ThesisThanks}
+Zde bude uvedeno \uv{poděkování} ... 
+\end{ThesisThanks}
+
+Obdobně jako poděkování se mohou vysadit shrnutí a klíčová 
+slova pomocí prostředí Thesisacti a ThesisKeyWordsi.
+
+\MainMatter
+\tableofcontents
+\chapter*{Úvod}
+Text ...
+
+% Následují další kapitoly a podkapitoly, popřípadě závěr, dodatky, 
+% seznam literatury či použitých obrázků nebo tabulek.
+
+\bibliographystyle{plain}  % bibliografický styl 
+\bibliography{mujbisoubor} % soubor s citovanými
+                           % položkami bibliografie 
+
+\end{document}
+						</pre>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sect1" lang="cs" xml:lang="cs">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="id2807645"></a>Instalace</h2>
+            </div>
+          </div>
+        </div>
+        <p>usage: install.sh version [texdir]</p>
+        <p>example: install.sh 0.2.12</p>
+        <p>example: install.sh 0.2.12 /opt/texlive</p>
+      </div>
+      <div class="sect1" lang="cs" xml:lang="cs">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="id2807739"></a>Download</h2>
+            </div>
+          </div>
+        </div>
+        <p>instalator UNIX: <a href="install.sh" target="_top">install.sh</a></p>
+        <p>instalator WINDOWS: <a href="install.bat" target="_top">install.bat</a></p>
+        <div class="itemizedlist">
+          <ul type="disc">
+            <li>
+              <p>
+                <a href="fithesis-0.2.12.tar.gz" target="_top">0.2.12</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.2.11.tar.gz" target="_top">0.2.11</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.2.10.tar.gz" target="_top">0.2.10</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.2.9.tar.gz" target="_top">0.2.9</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.2.8.tar.gz" target="_top">0.2.8</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.2.7.tar.gz" target="_top">0.2.7</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.2.6.tar.gz" target="_top">0.2.6</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.2.5.tar.gz" target="_top">0.2.5</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.2.4.tar.gz" target="_top">0.2.4</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.2.3.tar.gz" target="_top">0.2.3</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.2.2.tar.gz" target="_top">0.2.2</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.2.1.tar.gz" target="_top">0.2.1</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.2.tar.gz" target="_top">0.2</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.1h.tar.gz" target="_top">0.1h</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.1g.tar.gz" target="_top">0.1g</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="fithesis-0.1f.tar.gz" target="_top">0.1f</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect1" lang="cs" xml:lang="cs">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="id2818016"></a>Changelog</h2>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <ul type="disc">
+            <li>
+              <p>2008/07/27 v0.2.12 Licence change to the LPPL [JP]</p>
+            </li>
+            <li>
+              <p>2008/01/07 v0.2.11 fix missing fi-logo.mf [JP,PS]</p>
+            </li>
+            <li>
+              <p>2006/05/10 v0.2.10 fix EN name of Acknowledgement [JP]</p>
+            </li>
+            <li>
+              <p>2006/05/08 v0.2.9 add EN version of University name [JP]</p>
+            </li>
+            <li>
+              <p>2006/01/20 v0.2.8 add change of University name [JP]</p>
+            </li>
+            <li>
+              <p>2005/05/10 v0.2.7 escape all czech letters [JP], babel is used insted of stupid package czech [JP], \MainMatter should be placed after \tablesofcontents [PS]</p>
+            </li>
+            <li>
+              <p>2004/12/22 v0.2.6 fix : behind Advisor [JP]</p>
+            </li>
+            <li>
+              <p>2004/05/13 v0.2.5 add english abstract [JP]</p>
+            </li>
+            <li>
+              <p>2004/05/13 v0.2.4 fix SK declaration [Peter Cerensky, JP]</p>
+            </li>
+            <li>
+              <p>2004/05/13 v0.2.3 fix title spacing [PS, JP]</p>
+            </li>
+            <li>
+              <p>2004/05/12 v0.2.2 fix encoding bug [JP]</p>
+            </li>
+            <li>
+              <p>2004/05/11 v0.2.1 add subsubsection to toc [JP]</p>
+            </li>
+            <li>
+              <p>2004/05/03 v0.2   add sk lang [JP, Peter Cerensky], set default cls class to rapport3 [JP]</p>
+            </li>
+            <li>
+              <p>2004/04/01 v0.1g  change of default size (12pt-&gt;11pt) [JP]</p>
+            </li>
+            <li>
+              <p>2004/01/24 v0.1f  add documentation for hyperref [JP]</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footnotes">
+        <br />
+        <hr width="100" align="left" />
+        <div class="footnote">
+          <p><sup>[<a id="ftn.id2831491" href="#id2831491">1</a>] </sup>Použije se originální opticky škálované logo v jazyce METAFONT.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
